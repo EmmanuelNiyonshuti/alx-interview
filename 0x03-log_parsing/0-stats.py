@@ -64,6 +64,8 @@ def main():
                     status_codes[status_code] += 1
             if count_lines % 10 == 0:
                 print_metrics(total_size, status_codes)
+    except KeyboardInterrupt:
+        sys.exit(0)
     finally:
         print_metrics(total_size, status_codes)
 
