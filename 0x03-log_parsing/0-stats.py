@@ -57,8 +57,9 @@ def main():
             if count_lines % 10 == 0:
                 print_metrics(total_size, status_codes)
     except KeyboardInterrupt:
-        print_metrics(total_size, status_codes)
         sys.exit(0)
+    finally:
+        print_metrics(total_size, status_codes)
 
 
 if __name__ == "__main__":
