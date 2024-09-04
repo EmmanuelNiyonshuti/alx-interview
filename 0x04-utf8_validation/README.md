@@ -28,10 +28,10 @@ For further reading, these resources were particularly helpful in understanding 
 [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 
 
- * Function: validUTF8(data)
+## Function: validUTF8(data)
 The validUTF8(data) function verifies if the given list of integers represents valid UTF-8 encoded data.
 
- * Parameters
+* Parameters
   -  data (list of integers): A list where each integer represents a byte in the UTF-8 encoded data.
  * Returns
   - True if the data is valid UTF-8 encoding.
