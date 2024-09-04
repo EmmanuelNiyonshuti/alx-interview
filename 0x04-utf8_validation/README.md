@@ -22,10 +22,10 @@ UTF-8 uses one to four bytes to encode characters:
 
 For further reading, these resources were particularly helpful in understanding the concepts:
 
-[Characters, Symbols, and the Unicode Miracle]('https://www.youtube.com/watch?v=MijmeoH9LT4')
+[Characters, Symbols, and the Unicode Miracle](https://www.youtube.com/watch?v=MijmeoH9LT4)
 
 
-[The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets]('https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/')
+[The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 
 
  * Function: validUTF8(data)
