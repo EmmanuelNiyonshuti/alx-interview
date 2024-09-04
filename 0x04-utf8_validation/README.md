@@ -21,8 +21,13 @@ UTF-8 uses one to four bytes to encode characters:
 - 4 bytes (11110xxx 10xxxxxx 10xxxxxx 10xxxxxx): Represents characters beyond the Basic Multilingual Plane (65536-1114111).
 
 For further reading, these resources were particularly helpful in understanding the concepts:
-     - [Characters, Symbols, and the Unicode Miracle]('https://www.youtube.com/watch?v=MijmeoH9LT4')
-     - [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets]('https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/')
+
+[Characters, Symbols, and the Unicode Miracle]('https://www.youtube.com/watch?v=MijmeoH9LT4')
+
+
+[The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets]('https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/')
+
+
  * Function: validUTF8(data)
 The validUTF8(data) function verifies if the given list of integers represents valid UTF-8 encoded data.
 
