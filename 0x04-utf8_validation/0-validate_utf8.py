@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ comprises `validUTF8` function """
 
 def validUTF8(data):
