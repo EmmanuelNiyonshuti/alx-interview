@@ -4,9 +4,10 @@ This module contains a function `validUTF8`
 to validate if a sequence of bytes represents
 a valid UTF-8 encoded data.
 """
+from typing import List
 
 
-def validUTF8(data):
+def validUTF8(data: List[int]) -> bool:
     """
     validate UTF-8 data.
     it relies on recognizing the correct patterns
@@ -16,6 +17,8 @@ def validUTF8(data):
     Return:
         True if data is valid `UTF-8`, False otherwise.
     """
+    if not data or not all((type(i) is int) for i in data):
+        return False
     cont_bytes = 0
     for num in data:
         byte = format(num, "08b")
