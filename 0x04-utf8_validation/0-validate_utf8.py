@@ -18,23 +18,24 @@ def validUTF8(data: List[int]) -> bool:
         True if data is valid `UTF-8`, False otherwise.
     """
     # if not data or not all((type(i) is int) for i in data):
-    #     return False
+    #     return False # checker didn't like this
     cont_bytes = 0
     for num in data:
-        byte = format(num, "08b")
+        # byte = format(num, "08b")
+        byte = bin(num).replace("0b", "").rjust(8, "0")
         if cont_bytes == 0:
-            if byte.startswith('0'):
+            if byte.startswith("0"):
                 continue
-            elif byte.startswith('110'):
+            elif byte.startswith("110"):
                 cont_bytes = 1
-            elif byte.startswith('1110'):
+            elif byte.startswith("1110"):
                 cont_bytes = 2
-            elif byte.startswith('11110'):
+            elif byte.startswith("11110"):
                 cont_bytes = 3
             else:
                 return False
         else:
-            if not byte.startswith('10'):
+            if not byte.startswith("10"):
                 return False
             cont_bytes -= 1
     return cont_bytes == 0
