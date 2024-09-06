@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This module contains a function `validUTF8`
 to validate if a sequence of bytes represents
