@@ -17,14 +17,13 @@ def validUTF8(data: List[int]) -> bool:
     Return:
         True if data is valid `UTF-8`, False otherwise.
     """
-    # if not data or not all((type(i) is int) for i in data):
-    #     return False # checker didn't like this
+    if not all(isinstance(i, int) and not isinstance(i, bool) for i in data):
+        return False
     cont_bytes = 0
     for num in data:
         if num > 255 or num < 0:
             return False
-        # byte = format(num, "08b")
-        byte = bin(num).replace("0b", "").rjust(8, "0")
+        byte = format(num, "08b")
         if cont_bytes == 0:
             if byte.startswith("0"):
                 continue
