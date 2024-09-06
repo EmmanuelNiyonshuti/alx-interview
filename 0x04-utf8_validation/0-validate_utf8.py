@@ -14,20 +14,20 @@ def validUTF8(data):
     """
     cont_bytes = 0
     for num in data:
-        bin_rep = format(num, '08b')
+        byte = format(num, "08b")
         if cont_bytes == 0:
-            if bin_rep.startswith('0'):
+            if byte.startswith('0'):
                 continue
-            elif bin_rep.startswith('11'):
+            elif byte.startswith('110'):
                 cont_bytes = 1
-            elif bin_rep.startswith('111'):
+            elif byte.startswith('1110'):
                 cont_bytes = 2
-            elif bin_rep.startswith('1111'):
+            elif byte.startswith('11110'):
                 cont_bytes = 3
             else:
                 return False
         else:
-            if not bin_rep.startswith('10'):
+            if not byte.startswith('10'):
                 return False
             cont_bytes -= 1
     return cont_bytes == 0
