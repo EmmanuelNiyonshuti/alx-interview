@@ -21,6 +21,8 @@ def validUTF8(data: List[int]) -> bool:
     #     return False # checker didn't like this
     cont_bytes = 0
     for num in data:
+        if num > 255 or num < 0:
+            return False
         # byte = format(num, "08b")
         byte = bin(num).replace("0b", "").rjust(8, "0")
         if cont_bytes == 0:
