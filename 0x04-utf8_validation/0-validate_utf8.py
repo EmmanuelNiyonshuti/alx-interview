@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" validUTF8` function """
+"""
+This module contains a function `validUTF8`
+to validate if a sequence of bytes represents
+a valid UTF-8 encoded data.
+"""
 
 
 def validUTF8(data):
