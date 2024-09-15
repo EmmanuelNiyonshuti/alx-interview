@@ -3,6 +3,8 @@
 comprises an algorithm to calculate
 the minimum number of operations to get n 'H' chars given n.
 """
+
+
 def minOperations(n):
     """
     Calculates the minimum number of operations
@@ -13,7 +15,7 @@ def minOperations(n):
         int: The minimum number of operations required, or 0 if impossible.
 
     """
-    n <= 1:
+    if n <= 1:
         return 0
     operations = 0
     factors = 2
@@ -23,4 +25,3 @@ def minOperations(n):
             n //= factors
         factors += 1
     return operations
-
