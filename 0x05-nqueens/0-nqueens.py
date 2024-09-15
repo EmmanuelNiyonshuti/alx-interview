@@ -7,7 +7,6 @@ def safe_place_queen(board, row, col, N):
     """ finds a safe place to place a queen """
     for i in range(row):
         if board[i] == col:
-            print("board[i]", board[i])
             return False
     for i, j in zip(range(row - 1, -1, -1), range(col - 1, -1, -1)):
         if board[i] == j:
@@ -20,9 +19,9 @@ def safe_place_queen(board, row, col, N):
 
 def nqueens(N):
     def backtrack(row):
-        """ 
+        """
         backtracks when current row's columns are exhausted
-        with no safe place for a queen 
+        with no safe place for a queen.
         """
         if row == N:
             result.append([[i, board[i]] for i in range(N)])
