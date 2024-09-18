@@ -15,12 +15,11 @@ async function starWarMovieCharacters () {
     const body = await rp(movieUrl);
     const movie = JSON.parse(body);
     const characterUrls = movie.characters;
-    const characterPromises = characterUrls.map(async (url) => {
+    for (const url of characterUrls) {
       const body = await rp(url);
       const character = JSON.parse(body);
       console.log(character.name);
-    });
-    await Promise.all(characterPromises);
+    }
   } catch (error) {
     console.log(error.message);
   }
