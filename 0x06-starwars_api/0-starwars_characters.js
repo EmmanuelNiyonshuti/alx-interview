@@ -1,7 +1,10 @@
 #!/usr/bin/node
 // fecth all characters of Star Wars movie.
 
-const rp = require('request-promise-native');
+const request = require('request');
+const util = require('util');
+const rp = util.promisify(request);
+
 if (process.argv.length < 3) {
   process.exit(1);
 }
@@ -9,20 +12,22 @@ if (process.argv.length < 3) {
 const movieId = process.argv[2];
 const movieUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
+async function fetchCharacter (url) {
+  const resp = await rp(url);
+  return JSON.parse(resp.body).name;
+}
 async function starWarMovieCharacters () {
   try {
-    const body = await rp(movieUrl);
-    const movie = JSON.parse(body);
+    const movieResp = await rp(movieUrl);
+    const movie = JSON.parse(movieResp.body);
     const characterUrls = movie.characters;
-    const characterPromises = characterUrls.map(async (url) => {
-      const body = await rp(url);
-      const character = JSON.parse(body);
-      return character.name;
-    });
-    const characterNames = await Promise.all(characterPromises);
-    characterNames.forEach(name => console.log(name));
-  } catch (error) {
-    console.log(error.message);
+    for (const url of characterUrls) {
+      const name = await fetchCharacter(url);
+      console.log(name);
+    }
+  } catch (err) {
+    console.error(err.message);
   }
 }
+
 starWarMovieCharacters();
