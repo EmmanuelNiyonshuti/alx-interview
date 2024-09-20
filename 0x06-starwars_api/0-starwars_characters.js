@@ -1,11 +1,7 @@
 #!/usr/bin/node
-
 // fecth all characters of Star Wars movie.
 
 const rp = require('request-promise-native');
-if (process.argv.length < 3) {
-  process.exit(1);
-}
 
 const movieId = process.argv[2];
 const movieUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
