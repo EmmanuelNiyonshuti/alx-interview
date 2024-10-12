@@ -2,10 +2,9 @@
 '''
 comprises a function that finds the perimeter of an island.
 '''
-from typing import List
 
 
-def island_perimeter(grid: List[int]):
+def island_perimeter(grid):
     '''
     finds island perimeter.
     Args:
