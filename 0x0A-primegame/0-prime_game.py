@@ -36,7 +36,7 @@ def isWinner(x, nums):
     max_num = max(nums)
     primes = sieve_erastosthenes(max_num)
     ben = 0
-    mary = 0
+    maria = 0
     for n in nums:
         primes_count = 0
         for p in primes:
@@ -47,9 +47,10 @@ def isWinner(x, nums):
         if primes_count % 2 == 0:
             ben += 1
         elif primes_count % 2 != 0:
-            mary += 1
-    if ben > mary:
+            maria += 1
+    if ben > maria:
         return "Ben"
-    elif ben < mary:
-        return "Mary"
+    elif ben < maria:
+        return "Maria"
     return None
+
