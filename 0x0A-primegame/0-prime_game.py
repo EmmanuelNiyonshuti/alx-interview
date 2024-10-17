@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 comprises prime game challenge implementation.
 """
@@ -27,30 +27,29 @@ def isWinner(x, nums):
     determines the winner after x rounds of the prime game.
     args:
         x (int) - number of rounds.
-        nums (list) - list of integers for each round.
-    Returns:
+        nums (list) - list of integers.
+    Return:
         str: "Ben" if Ben wins, "Mary" if Mary wins.
     """
     if not nums or x <= 0:
         return None
+    max_num = max(nums)
+    primes = sieve_erastosthenes(max_num)
     ben = 0
     mary = 0
-    i = 0
-    while i < x:
-        for n in nums:
-            primes = sieve_erastosthenes(n)
-            primes_count = len(primes)
-            if primes_count == 0:
-                ben += 1
-            if primes_count % 2 == 0:
-                ben += 1
-            elif primes_count % 2 != 0:
-                mary += 1
-        i += 1
-
+    for n in nums:
+        primes_count = 0
+        for p in primes:
+            if p <= n:
+                primes_count += 1
+        if primes_count == 0:
+            ben += 1
+        if primes_count % 2 == 0:
+            ben += 1
+        elif primes_count % 2 != 0:
+            mary += 1
     if ben > mary:
         return "Ben"
-    elif mary < ben:
+    elif ben < mary:
         return "Mary"
-    else:
-        return None
+    return None
